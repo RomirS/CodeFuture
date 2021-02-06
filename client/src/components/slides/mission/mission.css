@@ -1,0 +1,80 @@
+:root {
+  --tran-time: 1.5s;
+}
+
+.mission {
+  width: 100vw;
+  height: 100vh;
+}
+
+.mission .container {
+  height: 100vh;
+}
+
+.mission .row {
+  margin-left: 0;
+}
+
+.mission .row .heading {
+  position: relative;
+  height: 200px;
+}
+
+.mission h1 {
+  position: relative;
+  top: 25%;
+
+  margin: 0;
+  opacity: 0;
+  font-size: 40px;
+  text-align: right;
+
+  animation:
+    fadeIn var(--tran-time) forwards,
+    leftIn var(--tran-time);
+}
+
+.mission span.grad-line {
+  display: block;
+  width: 12px;
+  height: 200px;
+  border-radius: 10px;
+  background: linear-gradient(var(--teal), var(--cyan));
+
+  position: absolute;
+  top: 0;
+  right: -30%;
+
+  animation: float 10s infinite;
+}
+
+.mission p {
+  opacity: 0;
+  font-size: 25px;
+  font-weight: 300;
+  margin: 0;
+
+  animation:
+    fadeIn var(--tran-time) forwards,
+    rightIn var(--tran-time);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1;}
+}
+
+@keyframes leftIn {
+  from { transform: translateX(-30px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes rightIn {
+  from { transform: translateX(30px); }
+  to { transform: translateX(0); }
+}
+
+@keyframes undulate {
+  from { top: 10px }
+  to { top: -10px }
+}
