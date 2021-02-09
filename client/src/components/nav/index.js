@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 
 import './nav.css';
 
-const Nav = ({ slides, index, setIndex }) => {
+const Nav = ({ slideNames, index, setIndex }) => {
+    const history = useHistory();
+    const handleClick = (index) => {
+        setIndex(index);
+        history.push('/' + slideNames[index].toLowerCase());
+    }
+
+    useEffect(() => {
+        const renderLocation = window.location.pathname.split('/')[1];
+        slideNames.forEach((name, i) => {
+            if (name.toLowerCase() === renderLocation) setIndex(i);
+        });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <div className="nav">
             <span className="line" />
-            {slides.map((_, i) => (
-                <span className={clsx('circle', 'darken-2', (index === i) && 'pulse', (index === i) && 'grey')} onClick={() => setIndex(i)} key={"circle" + i} />
+            {slideNames.map((_, i) => (
+                <span className={clsx('circle', 'darken-2', (index === i) && 'pulse', (index === i) && 'grey')} onClick={() => handleClick(i)} key={"circle" + i} />
             ))}
+            <p className="title">{ slideNames[index] }</p>
         </div>
     )
 };
