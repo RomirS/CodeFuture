@@ -8,13 +8,13 @@ const Nav = ({ slideNames, index, setIndex }) => {
     const history = useHistory();
     const handleClick = (index) => {
         setIndex(index);
-        history.push('/' + slideNames[index].toLowerCase());
+        history.push('/' + slideNames[index].toLowerCase().replace(/\s/g, ''));
     }
 
     useEffect(() => {
         const renderLocation = window.location.pathname.split('/')[1];
         slideNames.forEach((name, i) => {
-            if (name.toLowerCase() === renderLocation) setIndex(i);
+            if (name.toLowerCase().replace(/\s/g, '') === renderLocation) setIndex(i);
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

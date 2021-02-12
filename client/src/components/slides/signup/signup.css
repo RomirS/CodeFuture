@@ -1,0 +1,55 @@
+.signup {
+  width: 100vw;
+  height: 100vh;
+}
+
+.signup .semicircle {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(-50%);
+  transform: rotateZ(90deg);
+
+  background-color: antiquewhite;
+}
+
+.signup .opening {
+  position: relative;
+  top: 190px;
+  text-align: center;
+}
+
+.signup .opening h1 {
+  font-size: 100px;
+  font-weight: 200;
+
+  transform: translateY(90px);
+
+  animation: 
+    fadeIn 1.5s ease-in forwards,
+    moveUp 1.5s ease-in-out 1.8s forwards;
+}
+
+.signup .opening .signup-link {
+  opacity: 0;
+
+  animation: 
+    fadeIn 1.0s ease-in 2.5s forwards;
+}
+
+.signup .signup-link span {
+  font-size: 40px;
+  font-weight: 200;
+  color: #757575;
+}
+
+.signup .signup-link a {
+  margin-left: 10px;
+  transform: translateY(-8px);
+}
+
+@keyframes moveUp {
+  from { transform: translateY(90px); }
+  to { transform: translateY(0); }
+}
+

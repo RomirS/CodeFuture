@@ -2,34 +2,36 @@
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0;
-    margin: 0 auto;
+    bottom: 15px;
 }
 
 .nav span.line {
     position: relative;
+    top: 23px;
     display: inline-block;
     width: 100%;
     height: 5px;
     background: var(--grey);
     border-radius: 6px;
+    z-index: 0;
 }
 
 .nav span.circle {
+    position: relative;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 3px solid var(--grey);
-    background: #fff;
+    background-color: #fff;
     display: inline-block;
     cursor: pointer;
 
     margin: 0 20px;
-    transform: translateY(-65%);
+    z-index: 3;
 }
 
 .nav .title {
-    transform: translateY(-150%);
+    margin: 0;
     text-align: center;
     font-weight: 200;
 }

@@ -4,20 +4,15 @@ import './signup.css';
 
 const Signup = () => {
     return (
-        <div className="mission">
-            <div className="container valign-wrapper">
-                <div className="row">
-                    <div className="col s12 m4 heading">
-                        <h1>Edward</h1>
-                        <span className="grad-line" />
-                    </div>
-                    <div className="col s12 m6 push-m2">
-                        <p>
-                            We want to make computer science topics just as easy to access as math 
-                            and science classes in early schooling by creating fun experiences to 
-                            teach basic programming concepts.
-                        </p>
-                    </div>
+        <div className="signup">
+            <div className="semicircle" />
+            <div className="opening">
+                <h1>So what are you waiting for?</h1>
+                <div className="signup-link">
+                    <span>Signup for a workshop now</span>
+                    <a className="btn-floating btn-small waves-effect waves-light red accent-2" href="/workshops">
+                        <i className="material-icons">chevron_right</i>
+                    </a>
                 </div>
             </div>
         </div>
