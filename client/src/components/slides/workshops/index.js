@@ -1,5 +1,5 @@
 import React from 'react';
-
+import INTROMAZE from 'assets/workshops/intromaze.png';
 import './workshops.css';
 //workshops -Edward Kang
 const Workshops = () => {
@@ -9,7 +9,7 @@ const Workshops = () => {
               {/* center workshops title*/} 
                 <div className="workshops card">
                     <div className="card-image waves-effect waves-block waves-light">
-                        <img className="activator" src="src/assets/workshops/intromaze.png" alt="failed to load"/>
+                        <img className="activator" src={INTROMAZE} alt="failed to load"/>
                     </div>
                     <div className="card-content">
                         <span className="card-title activator grey-text text-darken-4">Introduction to Scratch<i className="material-icons right">more_vert</i></span>
