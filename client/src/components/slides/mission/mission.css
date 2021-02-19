@@ -2,11 +2,6 @@
   --tran-time: 1.5s;
 }
 
-.mission {
-  width: 100vw;
-  height: 100vh;
-}
-
 .mission .container {
   height: 100vh;
 }

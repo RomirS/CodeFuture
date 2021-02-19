@@ -27,14 +27,14 @@
 
   animation: 
     fadeIn 1.5s ease-in forwards,
-    moveUp 1.5s ease-in-out 1.8s forwards;
+    moveUp 1.5s ease-out forwards;
 }
 
 .signup .opening .signup-link {
   opacity: 0;
 
   animation: 
-    fadeIn 1.0s ease-in 2.5s forwards;
+    fadeIn 3.0s ease-in forwards;
 }
 
 .signup .signup-link span {
@@ -43,13 +43,37 @@
   color: #757575;
 }
 
-.signup .signup-link a {
+.signup .signup-link button {
   margin-left: 10px;
-  transform: translateY(-8px);
+  transform: translateY(-11px);
 }
 
 @keyframes moveUp {
   from { transform: translateY(90px); }
   to { transform: translateY(0); }
 }
+
+.signup .container {
+    height: 100vh;
+}
+
+.signup .bubble {
+    margin: 0 auto;
+    height: 80vh;
+    width: 60%;
+    border-radius: 10px;
+    padding: 50px;
+
+    animation:
+        scaleIn 0.4s ease-in-out forwards;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+/* .signup .input-field {
+
+} */
 

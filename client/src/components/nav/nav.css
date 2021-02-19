@@ -3,6 +3,7 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 15px;
+    z-index: 1;
 }
 
 .nav span.line {
@@ -11,9 +12,8 @@
     display: inline-block;
     width: 100%;
     height: 5px;
-    background: var(--grey);
     border-radius: 6px;
-    z-index: 0;
+    z-index: 2;
 }
 
 .nav span.circle {
@@ -21,7 +21,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 3px solid var(--grey);
+    border: 3px solid rgba(255, 255, 255, 0.4);
     background-color: #fff;
     display: inline-block;
     cursor: pointer;

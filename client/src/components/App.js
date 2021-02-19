@@ -6,12 +6,13 @@ import Mission from './slides/mission';
 import Signup from './slides/signup';
 import Workshops from './slides/workshops';
 
+import colors from 'data/colors';
 import Nav from './nav';
 
 const App = () => {
     const [index, setIndex] = useState(0);
+
     const slides = [Hero, Mission, Signup, Workshops];
-    const slideNames = ['Home', 'Mission', 'Signup', 'Workshops'];
 
     return (
         <BrowserRouter>
@@ -19,10 +20,14 @@ const App = () => {
                 <Switch>
                     <Route exact path='/' component={Hero} />
                     {slides.map((Slide, i) => (
-                        <Route key={'slide' + i} exact path={'/' + slideNames[i]} component={Slide} />
+                        <Route 
+                            key={colors[i][0]} 
+                            exact path={'/' + colors[i][0]} 
+                            component={Slide}
+                        />
                     ))}
                 </Switch>
-                <Nav slideNames={slideNames} index={index} setIndex={setIndex} />
+                <Nav index={index} setIndex={setIndex} />
             </div>
         </BrowserRouter>
     )

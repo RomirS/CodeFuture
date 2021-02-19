@@ -4,7 +4,7 @@
   top: 50px;
   left: 50px;
   margin: 0;
-  font-size: 200px;
+  font-size: 280px;
   font-weight: 300;
   font-family: 'Work Sans', sans-serif;
 }
@@ -41,7 +41,7 @@
 
 @keyframes futureTyping {
   from { width: 0 }
-  to { width: 1000px }
+  to { width: 1400px }
 }
 
 /* Cursor effect */
@@ -110,7 +110,7 @@
 
 /* - - - - - Cube properties - - - - - */
 
-.cube{
+.hero .cube{
   position: absolute;
   transform-style: preserve-3d;
   transform: translateZ(-100px);
@@ -118,7 +118,7 @@
   left: 50%;
 }
 
-.cube_face{
+.hero .cube_face{
   position: absolute;
   top: -100;
   left: -100;
@@ -139,12 +139,12 @@
 
 /* - - - - - Additional cube styling - - - - - */
 
-.cube :nth-child(even){
+.hero .cube :nth-child(even){
   background: linear-gradient(to top left, #666, #222 );
   color: linear-gradient(to top left, #666, #222 );
 }
 
-.cube :nth-child(odd){
+.hero .cube :nth-child(odd){
   background: linear-gradient(to top left, #666, #222 );
   color: linear-gradient(to top left, #666, #222 );
 }
@@ -159,36 +159,36 @@
 /* - - - - - Cube face transforms - - - - -
 Front, Back, Left, Right, Top, Bottom*/
 
-.cube :nth-child(1){
+.hero .cube :nth-child(1){
   animation: facereflect 30s infinite linear;
   animation-delay: 0s;
   transform:
       translateZ(100px);
 }
-.cube :nth-child(2){
+.hero .cube :nth-child(2){
   transform: rotateY(180deg)
       translateZ(100px)
        rotateZ(90deg);
 }
-.cube :nth-child(3){
+.hero .cube :nth-child(3){
   animation: facereflect 30s infinite linear;
   animation-delay: 20s;
   transform: rotateY(-90deg)
       translateZ(100px)
              rotateZ(90deg);
 }
-.cube :nth-child(4){
+.hero .cube :nth-child(4){
   transform: rotateY(90deg)
       translateZ(100px);
 }
-.cube :nth-child(5){
+.hero .cube :nth-child(5){
   animation: facereflect 30s infinite linear;
   animation-delay: 10s;
   transform: rotateX(90deg)
       translateZ(100px)
              rotateZ(-90deg);
 }
-.cube :nth-child(6){
+.hero .cube :nth-child(6){
   transform: rotateX(-90deg)
       translateZ(100px);
 }

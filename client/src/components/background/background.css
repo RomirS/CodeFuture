@@ -1,0 +1,65 @@
+:root {
+  --cube-size: 100px;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.background .cube {
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  perspective: calc( var(--cube-size) * 4 );
+}
+
+.background .cube-wrapper {
+  transform-style: preserve-3d;
+}
+
+.background .cube-face {
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+}
+
+/* .background .cube-wrapper .front{
+  background: #ff5252;
+}
+
+.background .cube-wrapper .back{
+  background: #ff4d4d;
+}
+
+.background .cube-wrapper .right {
+  background: linear-gradient(to right, #ff5252, #ff4d4d );
+}
+
+.background .cube-wrapper .left {
+  background: linear-gradient(to left, #ff5252, #ff4d4d );
+}
+
+.background .cube-wrapper .top {
+  background: linear-gradient(to top, #ff5252, #ff4d4d );
+}
+
+.background .cube-wrapper .bottom {
+  background: linear-gradient(to bottom, #ff5252, #ff4d4d );
+} */
+
+.background .cube .front  { transform: rotateY(0deg) translateZ(calc( var(--cube-size) / 2 )); }
+.background .cube .back   { transform: rotateY(180deg) translateZ(calc( var(--cube-size) / 2 )); }
+.background .cube .right  { transform: rotateY(90deg) translateZ(calc( var(--cube-size) / 2 )); }
+.background .cube .left   { transform: rotateY(-90deg) translateZ(calc( var(--cube-size) / 2 )); }
+.background .cube .top    { transform: rotateX(90deg) translateZ(calc( var(--cube-size) / 2 )); }
+.background .cube .bottom { transform: rotateX(-90deg) translateZ(calc( var(--cube-size) / 2 )); }
+
+.transform {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: black;
+}
