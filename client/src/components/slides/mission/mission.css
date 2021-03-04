@@ -43,6 +43,17 @@
   animation: float 10s infinite;
 }
 
+@media only screen and (max-width: 600px) {
+    .mission .row .heading {
+        height: auto;
+        margin-bottom: 40px;
+    }
+
+    .mission span.grad-line {
+        display: none;
+    }
+}
+
 .mission p {
   opacity: 0;
   font-size: 25px;
@@ -52,19 +63,4 @@
   animation:
     fadeIn var(--tran-time) forwards,
     rightIn var(--tran-time);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes leftIn {
-  from { transform: translateX(-30px); }
-  to { transform: translateX(0); }
-}
-
-@keyframes rightIn {
-  from { transform: translateX(30px); }
-  to { transform: translateX(0); }
 }

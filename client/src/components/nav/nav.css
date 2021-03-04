@@ -1,5 +1,6 @@
 .nav {
     position: fixed;
+    width: 210px;
     left: 50%;
     transform: translateX(-50%);
     bottom: 15px;
@@ -29,6 +30,15 @@
     margin: 0 20px;
     z-index: 3;
 }
+
+/* @media only screen and (max-width: 500px) {
+    .nav span.circle {
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        margin: 0 15px;
+    }
+} */
 
 .nav .title {
     margin: 0;

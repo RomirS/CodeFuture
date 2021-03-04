@@ -17,8 +17,7 @@ const Nav = ({ index, setIndex }) => {
         colors.forEach((page, i) => {
             if (page[0].toLowerCase().replace(/\s/g, '') === renderLocation) setIndex(i);
         });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [setIndex]);
 
     const color = colors[index][1];
 

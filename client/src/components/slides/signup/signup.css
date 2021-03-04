@@ -1,8 +1,3 @@
-.signup {
-  width: 100vw;
-  height: 100vh;
-}
-
 .signup .semicircle {
   position: absolute;
   width: 100vw;
@@ -20,10 +15,11 @@
 }
 
 .signup .opening h1 {
+  position: relative;
+  top: 100px;
   font-size: 100px;
   font-weight: 200;
-
-  transform: translateY(90px);
+  padding: 0 30px;
 
   animation: 
     fadeIn 1.5s ease-in forwards,
@@ -48,32 +44,136 @@
   transform: translateY(-11px);
 }
 
-@keyframes moveUp {
-  from { transform: translateY(90px); }
-  to { transform: translateY(0); }
+@media only screen and (max-width: 1200px) {
+  .signup .opening h1 {
+    top: 60px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .signup .opening h1 {
+    font-size: 15vw;
+    padding: 0 4vw;
+  }
+
+  .signup .signup-link span {
+    font-size: 5vw;
+  }
+
+  .signup .signup-link button {
+    width: 15px;
+    height: 15px;
+    transform: translateY(-3px);
+  }
+
+  .signup .signup-link i {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.signup .overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index: 1;
 }
 
 .signup .container {
-    height: 100vh;
+  height: 100vh;
 }
 
 .signup .bubble {
-    margin: 0 auto;
-    height: 80vh;
-    width: 60%;
-    border-radius: 10px;
-    padding: 50px;
+  position: relative;
+  margin: 0 auto;
+  height: 80vh;
+  width: 60%;
+  border-radius: 4px;
+  padding: 50px;
+  z-index: 2;
 
-    animation:
-        scaleIn 0.4s ease-in-out forwards;
+  box-shadow: 0 16px 24px 2px rgb(249, 168, 37 / 14%), 0 6px 30px 5px rgb(249, 168, 37 / 12%), 0 8px 10px -7px rgb(249, 168, 37 / 20%);
 }
 
-@keyframes scaleIn {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
+@media only screen and (max-width: 1000px) {
+  .signup .bubble {
+    width: 90%;
+  }
 }
 
-/* .signup .input-field {
+.signup .input-field input {
+  border-bottom-color: #000;
+}
 
-} */
+.signup .input-field input:focus {
+  border-bottom-color: #000!important;
+  box-shadow: 0 1px 0 0 #000!important;
+}
+
+.signup .input-field input + label {
+  color: #000;
+}
+
+.signup .input-field input:focus + label {
+  color: #000!important;
+}
+
+@media only screen and (max-width: 600px) {
+  .signup form h2 {
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .signup .bubble {
+    height: fit-content;
+    padding: 30px;
+    padding-top: 40px;
+  }
+
+  .signup form .row:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .signup form .input-field:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+/* Toast */
+
+.toast {
+  width: 250px;
+  margin: 0 auto;
+  font-weight: 400;
+  border-radius: 4px;
+  padding: 10px 20px;
+  z-index: 3;
+}
+
+.toast span {
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.toast span:hover i {
+  color: #ff8a80;
+}
+
+.toast span i {
+  position: relative;
+  font-size: 20px;
+
+}
+
+.toast p {
+  margin: 0;
+}
 

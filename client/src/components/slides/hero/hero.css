@@ -9,47 +9,13 @@
   font-family: 'Work Sans', sans-serif;
 }
 
-/* Typewriter effect */
-.hero h1.typewriter {
-  overflow: hidden;
-  border-right: .02em solid transparent;
-  white-space: nowrap;
-  letter-spacing: .15em;
-  /* margin: 0 auto; */
+@media only screen and (max-width: 1160px) {
+  .hero h1 {
+    font-size: 20vw;
+    top: 40vh;
+    transform: translateY(-50%);
+  }
 }
-
-.hero #code {
-  animation: 
-    codeTyping 0.7s steps(8, end),
-    blinking .15s 4 step-end;
-}
-
-.hero #future {
-  width: 0%;
-  animation:
-    futureTyping 1.2s steps(15, end),
-    blinking .15s 7 step-end;
-  animation-delay: 0.8s;
-  animation-fill-mode: forwards;
-}
-
-/* Typing effect */
-@keyframes codeTyping {
-  from { width: 0 }
-  to { width: 700px }
-}
-
-@keyframes futureTyping {
-  from { width: 0 }
-  to { width: 1400px }
-}
-
-/* Cursor effect */
-@keyframes blinking {
-  from, to { border-color: transparent }
-  50% { border-color: black; }
-}
-
 
 /* Cube */
 
@@ -94,19 +60,8 @@
 
 .spinwrap{
   transform-style: preserve-3d;
-  animation: spin 30s infinite linear;
+  animation: spin 10s infinite linear;
 }
-
-@keyframes float{
-  0% {transform: translateY(15px);}
-  50% {transform: translateY(-15px);}
-  100% {transform: translateY(15px);}
-}
-
-@keyframes spin {
-     from{transform: rotateY(0deg);}
-     to{transform: rotateY(-360deg);} 
-  }
 
 /* - - - - - Cube properties - - - - - */
 

@@ -12,7 +12,7 @@
   position: absolute;
   width: var(--cube-size);
   height: var(--cube-size);
-  perspective: calc( var(--cube-size) * 4 );
+  perspective: calc( var(--cube-size) * 8 );
 }
 
 .background .cube-wrapper {
@@ -55,11 +55,3 @@
 .background .cube .left   { transform: rotateY(-90deg) translateZ(calc( var(--cube-size) / 2 )); }
 .background .cube .top    { transform: rotateX(90deg) translateZ(calc( var(--cube-size) / 2 )); }
 .background .cube .bottom { transform: rotateX(-90deg) translateZ(calc( var(--cube-size) / 2 )); }
-
-.transform {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: black;
-}

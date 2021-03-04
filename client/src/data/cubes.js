@@ -1,6 +1,6 @@
 const cubes = [
     //left, top, scale;
-    [700, 500, 3],
+    [720, 400, 5],
 ];
 
 export default cubes;

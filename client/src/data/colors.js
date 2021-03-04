@@ -1,8 +1,7 @@
 const colors = [
     ['Home', 'deep-orange'],
     ['Mission', 'blue'],
-    ['Signup', 'green'],
-    ['Workshops', 'deep-purple']
+    ['Signup', 'yellow']
 ]
 
 export default colors;

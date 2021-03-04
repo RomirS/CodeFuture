@@ -4,15 +4,15 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Hero from './slides/hero';
 import Mission from './slides/mission';
 import Signup from './slides/signup';
-import Workshops from './slides/workshops';
 
 import colors from 'data/colors';
 import Nav from './nav';
+import 'assets/animations.css';
 
 const App = () => {
     const [index, setIndex] = useState(0);
 
-    const slides = [Hero, Mission, Signup, Workshops];
+    const slides = [Hero, Mission, Signup];
 
     return (
         <BrowserRouter>

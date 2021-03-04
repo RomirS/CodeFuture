@@ -26,7 +26,7 @@ const Workshops = () => {
                     </div>
                 </div>
             </div>
-            <Background color={colors[3][1]} />
+            <Background color={colors[3][1]} cube />
         </>
     )
 };
