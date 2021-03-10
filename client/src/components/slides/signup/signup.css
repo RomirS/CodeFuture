@@ -164,7 +164,7 @@
 }
 
 .toast span:hover i {
-  color: #ff8a80;
+  opacity: 0.5;
 }
 
 .toast span i {

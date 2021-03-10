@@ -1,5 +1,5 @@
-const Toast = ({ clear, message }) => (
-    <div className="toast red accent-2">
+const Toast = ({ clear, message, color }) => (
+    <div className={`toast ${color} accent-3`}>
         <span className="clear-button" onClick={clear}>
             <i className="material-icons">clear</i>
         </span>

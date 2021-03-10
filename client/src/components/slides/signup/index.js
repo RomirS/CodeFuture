@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import firebase from 'config/fbconfig';
+import { withFirestore } from 'react-firestore';
 import useOutsideMouse from 'helpers/useOutsideMouse';
 
 import Background from '../../background';
@@ -8,24 +8,12 @@ import Toast from './Toast';
 import colors from 'data/colors';
 import './signup.css';
 
-const getEmails = new Promise((resolve, reject) => {
-    const emails = [];
-    const db = firebase.firestore();
-    db.collection('registrees').get().then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-            emails.push(doc.data().email);
-        })
-        resolve(emails);
-    }).catch(e => {
-        reject('Error retrieving data: ' + e);
-    });
-})
-
-const Signup = () => {
+const Signup = ({ firestore }) => {
     const [showForm, setShowForm] = useState(false);
     const [toast, setToast] = useState({
         show: false,
-        message: ''
+        message: '',
+        color: 'red'
     });
     const [formState, setFormState] = useState({
         email: null,
@@ -38,13 +26,6 @@ const Signup = () => {
     const [clickedOut, setClickedOut] = useOutsideMouse(formBubble);
 
     const color = colors[2][1];
-
-    const emailList = useRef(null);
-    useEffect(() => {
-        getEmails.then(emails => {
-            emailList.current = emails;
-        });
-    }, []);
 
     useEffect(() => {
         if (showForm && clickedOut) {
@@ -62,23 +43,42 @@ const Signup = () => {
         const { email, first, last, grade, school } = formState;
 
         if (email && first && last && grade && school) {
-            if (emailList.current.includes(email)) {
-                setToast({
-                    show: true,
-                    message: 'Email already provided'
+            const emails = [];
+            firestore.collection('registrees').get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    emails.push(doc.data().email);
                 });
-            } else {
-                const db = firebase.firestore();
-                db.collection('registrees').add(formState).then(() => {
-                    setClickedOut(true);
-                }).catch((e) => {
-                    console.error("Error adding document: ", e);
-                });
-            }
+                if (emails.includes(email)) {
+                    setToast({
+                        show: true,
+                        message: 'Email already provided',
+                        color: 'red'
+                    });
+                } else {
+                    firestore.collection('registrees').add(formState).then(() => {
+                        setToast({
+                            show: true,
+                            message: 'Signup successful',
+                            color: 'green'
+                        });
+                        setFormState({
+                            email: null,
+                            first: null,
+                            last: null,
+                            grade: null,
+                            school: null
+                        })
+                    }).catch((e) => {
+                        console.error("Error adding document: ", e);
+                    });
+                }
+            })
         } else {
             setToast({
                 show: true,
-                message: 'Please enter all fields'
+                message: 'Please enter all fields',
+                color: 'red'
             });
         }
     }
@@ -97,7 +97,7 @@ const Signup = () => {
                     <div className="container valign-wrapper">
                         <div className={`bubble white`} ref={formBubble}>
                             <Animate into="flipIn" out="flipOut" show={toast.show} addStyles={toastStyles} >
-                                <Toast clear={() => setToast({...toast, show: false})} message={toast.message} />
+                                <Toast clear={() => setToast({...toast, show: false})} message={toast.message} color={toast.color} />
                             </Animate>
                             <form onSubmit={handleSubmit}>
                                 <div className="row">
@@ -199,4 +199,4 @@ const Signup = () => {
     )
 };
 
-export default Signup;
+export default withFirestore(Signup);
